@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevCalc - Developer Calculator</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">    <link rel="stylesheet" href="devcalc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="header">
+            <h1>DevCalc - Developer Calculator</h1>
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <label class="switch">
+                    <input type="checkbox" id="theme-switch">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="conversions">Conversions</button>
+            <button class="tab-btn" data-tab="bitwise">Bitwise</button>
+            <button class="tab-btn" data-tab="strings">Strings</button>
+            <button class="tab-btn" data-tab="arrays">Arrays</button>
+        </div>
+        
+        <div class="tab-content active" id="conversions">
+            <div class="input-group">
+                <select id="conversion-type">
+                    <option value="binary">Binary ↔ Decimal</option>
+                    <option value="hex">Hex ↔ Decimal</option>
+                    <option value="octal">Octal ↔ Decimal</option>
+                    <option value="char">Character ↔ ASCII</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <input type="text" id="input-value" placeholder="Enter value...">
+                <button id="convert-btn">Convert</button>
+            </div>
+            
+            <div class="results">
+                <div class="result-box">
+                    <h3>Result:</h3>
+                    <div id="conversion-result">--</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="bitwise">
+            <div class="input-group">
+                <select id="bitwise-operation">
+                    <option value="and">AND (&)</option>
+                    <option value="or">OR (|)</option>
+                    <option value="xor">XOR (^)</option>
+                    <option value="not">NOT (~)</option>
+                    <option value="leftshift">Left Shift (<<)</option>
+                    <option value="rightshift">Right Shift (>>)</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <input type="number" id="bitwise-input1" placeholder="First number">
+                <input type="number" id="bitwise-input2" placeholder="Second number (if needed)">
+                <button id="bitwise-btn">Calculate</button>
+            </div>
+            
+            <div class="results">
+                <div class="result-box">
+                    <h3>Binary Representation:</h3>
+                    <div id="binary-representation">--</div>
+                </div>
+                <div class="result-box">
+                    <h3>Result:</h3>
+                    <div id="bitwise-result">--</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="strings">
+            <div class="input-group">
+                <select id="string-operation">
+                    <option value="length">String Length</option>
+                    <option value="reverse">Reverse String</option>
+                    <option value="upper">To Uppercase</option>
+                    <option value="lower">To Lowercase</option>
+                    <option value="trim">Trim Whitespace</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <textarea id="string-input" placeholder="Enter text..."></textarea>
+                <button id="string-btn">Process</button>
+            </div>
+            
+            <div class="results">
+                <div class="result-box">
+                    <h3>Result:</h3>
+                    <div id="string-result">--</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="arrays">
+            <div class="input-group">
+                <select id="array-operation">
+                    <option value="join">Join Array</option>
+                    <option value="reverse">Reverse Array</option>
+                    <option value="sum">Sum Numbers</option>
+                    <option value="unique">Unique Values</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <input type="text" id="array-input" placeholder="Enter comma-separated values">
+                <input type="text" id="array-separator" placeholder="Separator (for join)">
+                <button id="array-btn">Process</button>
+            </div>
+            
+            <div class="results">
+                <div class="result-box">
+                    <h3>Result:</h3>
+                    <div id="array-result">--</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>DevCalc - Developer Calculator</p>
+        </div>
+    </div>
+    
+    <script src="devcalc.js"></script>
+</body>
+</html>
+
